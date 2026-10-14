@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#241827">
+<title>LeYu Gallery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="site-shell">
+  <header class="masthead">
+    <div class="title-block"><div class="eyebrow">A hidden-object gallery</div><h1>LeYu</h1></div>
+    <div class="masthead-right"><div class="count" id="progressCount">0 <small>/ 19 FOUND</small></div></div>
+  </header>
+  <section class="gallery" aria-label="Interactive gallery">
+    <div class="painting-heading"><span class="scene-number" id="sceneNumber">I</span><h2 id="sceneTitle">Mona Lisa</h2><span class="artist" id="sceneArtist">Leonardo da Vinci · Original</span></div>
+    <div class="room" id="room">
+      <span class="wall-lamp left" aria-hidden="true">✧</span><span class="wall-lamp right" aria-hidden="true">✧</span>
+      <div class="artwork-wrap"><div class="frame"><div class="art-window" id="artWindow"><span class="scene-label" id="artLabel">AI-generated scene</span><button class="find-target" id="findTarget" type="button" aria-label="Find the hidden object" title="Find the hidden object">✦</button><div class="reveal-note" id="revealNote"></div></div></div></div>
+      <div class="painting-plaque" id="plaque">A light enters the cloister</div>
+      <div class="walker" id="walker" aria-label="Gallery visitor walking between paintings"><span class="head"></span><span class="body"></span><span class="leg one"></span><span class="leg two"></span></div>
+      <div class="hint" id="hint">Follow the landscape as it slips into the distance.</div>
+    </div>
+    <nav class="controls" aria-label="Gallery movement"><div class="control-group"><button class="arrow-button" id="previous" type="button" aria-label="Previous painting" title="Previous painting">←</button><button class="action-button" id="walkLeft" type="button">Walk left</button></div><div class="status" id="status">Look closely<span>One object is hidden</span></div><div class="control-group end"><button class="action-button" id="walkRight" type="button">Walk right</button><button class="arrow-button" id="next" type="button" aria-label="Next painting" title="Next painting">→</button></div></nav>
+    <div class="selector-wrap"><div class="selector-title">Choose a painting</div><nav class="selectors" id="selectors" aria-label="Choose a painting"></nav></div>
+    </section>
+</main>
+<dialog class="closeup" id="closeup" aria-labelledby="closeupTitle">
+  <div class="closeup-shell">
+    <header class="closeup-header"><div><span class="eyebrow">Look closer</span><h2 id="closeupTitle">Artwork</h2></div><button class="closeup-close" id="closeupClose" type="button" aria-label="Close close-up">×</button></header>
+    <div class="closeup-stage" id="closeupStage"></div>
+    <p class="closeup-prompt">Find the hidden object in the painting.</p>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite">Found it!</div>
+<script src="script.js" defer></script>
+</body>
+</html>
